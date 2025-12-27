@@ -1,0 +1,43 @@
+<!-- src/components/WhatsAppButton.astro -->
+<a
+  href="https://wa.me/525559876543?text=Hola%2C%20me%20interesa%20información%20sobre%20terrenos%20en%20Oaxaca"
+  target="_blank"
+  rel="noopener noreferrer"
+  class="fixed bottom-6 right-6 z-50 group"
+>
+  <div class="relative">
+    <!-- Anillo que pulsa solo 3 veces al cargar la página -->
+    <span class="absolute inset-0 rounded-full bg-green-500 opacity-75 animate-limited-ping"></span>
+
+    <!-- Botón principal -->
+    <div class="relative flex items-center justify-center w-16 h-16 bg-gradient-to-br from-green-500 to-green-600 text-white rounded-full shadow-2xl hover:shadow-green-500/50 hover:scale-110 transition-all duration-300">
+      <i class="fab fa-whatsapp text-4xl"></i>
+    </div>
+
+    <!-- Tooltip sutil al hover -->
+    <span class="absolute right-20 top-1/2 -translate-y-1/2 bg-gray-900 text-white text-sm px-4 py-2 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap pointer-events-none shadow-lg">
+      ¡Chatea con nosotros!
+    </span>
+  </div>
+</a>
+
+<style>
+  @keyframes ping {
+    0% {
+      transform: scale(1);
+      opacity: 0.75;
+    }
+    75% {
+      transform: scale(2);
+      opacity: 0;
+    }
+    100% {
+      transform: scale(2);
+      opacity: 0;
+    }
+  }
+
+  .animate-limited-ping {
+    animation: ping 1.5s cubic-bezier(0, 0, 0.2, 1) 3;
+  }
+</style>
