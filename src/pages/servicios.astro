@@ -1,0 +1,210 @@
+---
+// src/pages/servicios.astro
+import Layout from '../components/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout title="AMARE Inmobiliaria - Nuestros Servicios">
+  <Navbar slot="navbar" />
+
+  <!-- Hero Section -->
+  <section class="relative h-screen min-h-[700px] bg-fixed bg-center bg-cover -mt-20" style="background-image: url('https://mbluxury1.s3.amazonaws.com/2024/02/01151752/luxury-real-estate-website-design-scaled.jpg')">
+    <div class="absolute inset-0 bg-gradient-to-b from-black/70 via-primary/90 to-primary/95"></div>
+    <div class="relative z-10 flex items-center justify-center h-full text-center text-white px-6">
+      <div class="max-w-4xl">
+        <h1 class="text-5xl md:text-6xl lg:text-7xl font-bold mb-8 scroll-animate">NUESTROS SERVICIOS</h1>
+        <p class="text-xl md:text-2xl opacity-90 scroll-animate">Soluciones integrales para la compra, venta y desarrollo de terrenos</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Introducción -->
+  <section class="py-20 bg-gray-50">
+    <div class="max-w-5xl mx-auto px-6 text-center">
+      <h2 class="text-4xl font-bold text-primary mb-6 scroll-animate">Servicios Especializados en Terrenos</h2>
+      <p class="text-xl text-gray-600 mb-10 scroll-animate">Ofrecemos un acompañamiento completo en cada etapa de tu proyecto inmobiliario</p>
+      <p class="text-lg text-gray-700 max-w-3xl mx-auto leading-relaxed scroll-animate">
+        En AMARE Inmobiliaria entendemos que adquirir un terreno es una de las decisiones más importantes. Por eso, ofrecemos servicios especializados que van más allá de la simple transacción, asegurando que cada cliente tenga la información, asesoría y apoyo necesario para tomar la mejor decisión.
+      </p>
+    </div>
+  </section>
+
+  <!-- Servicios Grid -->
+  <section class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
+        <!-- Cada servicio con clase scroll-animate -->
+        <div class="text-center scroll-animate">
+          <i class="fas fa-search-location text-primary text-6xl mb-6"></i>
+          <h3 class="text-2xl font-bold text-primary mb-4">Búsqueda y Selección</h3>
+          <p class="text-gray-700 mb-6 leading-relaxed">
+            Realizamos una búsqueda exhaustiva según tus necesidades específicas, analizando más de 50 variables para encontrar el terreno perfecto.
+          </p>
+          <ul class="text-left text-gray-600 space-y-2 max-w-sm mx-auto">
+            <li class="flex items-center gap-3"><i class="fas fa-check text-accent"></i> Análisis de zonificación y usos de suelo</li>
+            <li class="flex items-center gap-3"><i class="fas fa-check text-accent"></i> Estudio de plusvalía y tendencias de mercado</li>
+            <li class="flex items-center gap-3"><i class="fas fa-check text-accent"></i> Evaluación de servicios e infraestructura</li>
+            <li class="flex items-center gap-3"><i class="fas fa-check text-accent"></i> Prospección en zonas de crecimiento</li>
+          </ul>
+        </div>
+
+        <div class="text-center scroll-animate">
+          <i class="fas fa-chart-line text-primary text-6xl mb-6"></i>
+          <h3 class="text-2xl font-bold text-primary mb-4">Valuación y Análisis Financiero</h3>
+          <p class="text-gray-700 mb-6 leading-relaxed">
+            Determinamos el valor real del terreno mediante metodologías profesionales y análisis comparativos de mercado.
+          </p>
+          <ul class="text-left text-gray-600 space-y-2 max-w-sm mx-auto">
+            <li class="flex items-center gap-3"><i class="fas fa-check text-accent"></i> Valuación certificada por peritos</li>
+            <li class="flex items-center gap-3"><i class="fas fa-check text-accent"></i> Proyección de plusvalía a 5-10 años</li>
+            <li class="flex items-center gap-3"><i class="fas fa-check text-accent"></i> Análisis de rendimiento de inversión</li>
+            <li class="flex items-center gap-3"><i class="fas fa-check text-accent"></i> Estudios de mercado y competencia</li>
+          </ul>
+        </div>
+
+        <div class="text-center scroll-animate">
+          <i class="fas fa-file-contract text-primary text-6xl mb-6"></i>
+          <h3 class="text-2xl font-bold text-primary mb-4">Gestión Legal y Notarial</h3>
+          <p class="text-gray-700 mb-6 leading-relaxed">
+            Nos encargamos de toda la tramitología legal para garantizar una transacción segura y libre de complicaciones.
+          </p>
+          <ul class="text-left text-gray-600 space-y-2 max-w-sm mx-auto">
+            <li class="flex items-center gap-3"><i class="fas fa-check text-accent"></i> Verificación de escrituras y títulos</li>
+            <li class="flex items-center gap-3"><i class="fas fa-check text-accent"></i> Trámites notariales y registrales</li>
+            <li class="flex items-center gap-3"><i class="fas fa-check text-accent"></i> Regularización de predios</li>
+            <li class="flex items-center gap-3"><i class="fas fa-check text-accent"></i> Contratos personalizados</li>
+          </ul>
+        </div>
+
+        <div class="text-center scroll-animate">
+          <i class="fas fa-hard-hat text-primary text-6xl mb-6"></i>
+          <h3 class="text-2xl font-bold text-primary mb-4">Desarrollo y Proyectos</h3>
+          <p class="text-gray-700 mb-6 leading-relaxed">
+            Apoyamos en la conceptualización y desarrollo de proyectos, conectándote con los mejores profesionales.
+          </p>
+          <ul class="text-left text-gray-600 space-y-2 max-w-sm mx-auto">
+            <li class="flex items-center gap-3"><i class="fas fa-check text-accent"></i> Estudios de factibilidad</li>
+            <li class="flex items-center gap-3"><i class="fas fa-check text-accent"></i> Diseño conceptual y planeación</li>
+            <li class="flex items-center gap-3"><i class="fas fa-check text-accent"></i> Gestión de permisos municipales</li>
+            <li class="flex items-center gap-3"><i class="fas fa-check text-accent"></i> Red de arquitectos y constructores</li>
+          </ul>
+        </div>
+
+        <div class="text-center scroll-animate">
+          <i class="fas fa-handshake text-primary text-6xl mb-6"></i>
+          <h3 class="text-2xl font-bold text-primary mb-4">Negociación y Cierre</h3>
+          <p class="text-gray-700 mb-6 leading-relaxed">
+            Representamos tus intereses en la negociación, asegurando las mejores condiciones y un exitoso cierre de operación.
+          </p>
+          <ul class="text-left text-gray-600 space-y-2 max-w-sm mx-auto">
+            <li class="flex items-center gap-3"><i class="fas fa-check text-accent"></i> Estrategias de negociación</li>
+            <li class="flex items-center gap-3"><i class="fas fa-check text-accent"></i> Asesoría en financiamiento</li>
+            <li class="flex items-center gap-3"><i class="fas fa-check text-accent"></i> Coordinación de cierres</li>
+            <li class="flex items-center gap-3"><i class="fas fa-check text-accent"></i> Seguimiento post-venta</li>
+          </ul>
+        </div>
+
+        <div class="text-center scroll-animate">
+          <i class="fas fa-user-tie text-primary text-6xl mb-6"></i>
+          <h3 class="text-2xl font-bold text-primary mb-4">Asesoría Personalizada</h3>
+          <p class="text-gray-700 mb-6 leading-relaxed">
+            Ofrecemos acompañamiento personalizado durante todo el proceso, desde la búsqueda hasta la construcción.
+          </p>
+          <ul class="text-left text-gray-600 space-y-2 max-w-sm mx-auto">
+            <li class="flex items-center gap-3"><i class="fas fa-check text-accent"></i> Asesor individual especializado</li>
+            <li class="flex items-center gap-3"><i class="fas fa-check text-accent"></i> Visitas guiadas a terrenos</li>
+            <li class="flex items-center gap-3"><i class="fas fa-check text-accent"></i> Análisis de necesidades específicas</li>
+            <li class="flex items-center gap-3"><i class="fas fa-check text-accent"></i> Soporte continuo</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Proceso de Trabajo -->
+  <section class="py-24 bg-gray-50">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-4xl font-bold text-primary text-center mb-6 scroll-animate">Nuestro Proceso de Trabajo</h2>
+      <p class="text-xl text-gray-600 text-center mb-16 scroll-animate">Metodología probada que garantiza resultados exitosos</p>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
+        {[1,2,3,4,5,6].map((step) => (
+          <div class="text-center scroll-animate">
+            <div class="w-16 h-16 bg-primary text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-6 shadow-lg">
+              {step}
+            </div>
+            <h3 class="text-xl font-bold text-primary mb-3">
+              {step === 1 ? 'Diagnóstico Inicial' :
+               step === 2 ? 'Búsqueda y Preselección' :
+               step === 3 ? 'Análisis y Evaluación' :
+               step === 4 ? 'Presentación y Visitas' :
+               step === 5 ? 'Negociación y Cierre' :
+               'Seguimiento Post-Venta'}
+            </h3>
+            <p class="text-gray-700">
+              {step === 1 ? 'Entendemos tus necesidades, presupuesto y objetivos a través de una consulta detallada.' :
+               step === 2 ? 'Filtramos las mejores opciones del mercado según tus criterios específicos.' :
+               step === 3 ? 'Realizamos estudios técnicos, legales y financieros de cada opción seleccionada.' :
+               step === 4 ? 'Mostramos los terrenos preseleccionados y te acompañamos en las visitas de campo.' :
+               step === 5 ? 'Representamos tus intereses en la negociación y gestionamos todo el proceso legal.' :
+               'Acompañamiento durante los trámites finales y asesoría para el desarrollo del terreno.'}
+            </p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Final -->
+  <section class="py-24 bg-gradient-to-r from-primary via-secondary to-accent text-white">
+    <div class="max-w-4xl mx-auto px-6 text-center">
+      <h2 class="text-4xl md:text-5xl font-bold mb-8 scroll-animate">¿Listo para comenzar tu proyecto?</h2>
+      <p class="text-xl mb-12 opacity-90 scroll-animate">
+        Agenda una consulta gratuita con uno de nuestros especialistas y descubre cómo podemos ayudarte.
+      </p>
+      <a href="/contacto" class="btn-primary text-xl px-12 py-5 shadow-2xl hover:shadow-3xl transform hover:-translate-y-2 transition-all duration-500 inline-flex items-center scroll-animate">
+        Agendar Consulta <i class="fas fa-calendar-check ml-4"></i>
+      </a>
+    </div>
+  </section>
+
+  <Footer slot="footer" />
+</Layout>
+
+<style is:global>
+  /* Estado inicial: oculto y desplazado */
+  .scroll-animate {
+    opacity: 0;
+    transform: translateY(60px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+  }
+
+  /* Estado final: visible */
+  .scroll-animate.animated {
+    opacity: 1;
+    transform: translateY(0);
+  }
+</style>
+
+<!-- Script con Intersection Observer -->
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const elements = document.querySelectorAll('.scroll-animate');
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('animated');
+          // Opcional: dejar de observar para mejorar rendimiento
+          observer.unobserve(entry.target);
+        }
+      });
+    }, {
+      threshold: 0.1, // Activa cuando el 10% del elemento es visible
+      rootMargin: '0px 0px -50px 0px' // Activa un poco antes
+    });
+
+    elements.forEach(el => observer.observe(el));
+  });
+</script>

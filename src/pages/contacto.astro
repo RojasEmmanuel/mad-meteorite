@@ -1,0 +1,247 @@
+---
+// src/pages/contacto.astro
+import Layout from '../components/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout title="AMARE Inmobiliaria - Contáctanos">
+  <Navbar slot="navbar" />
+
+  <!-- Hero Section -->
+  <section class="relative h-screen min-h-[700px] bg-fixed bg-center bg-cover -mt-20" style="background-image: url('https://img.freepik.com/foto-gratis/paraiso-playa-tropical-palmeras-agua-turquesa_23-2151975534.jpg?semt=ais_hybrid&w=740&q=80')">
+    <div class="absolute inset-0 bg-gradient-to-b from-black/70 via-primary/90 to-primary/95"></div>
+    <div class="relative z-10 flex items-center justify-center h-full text-center text-white px-6">
+      <div class="max-w-4xl">
+        <h1 class="text-5xl md:text-6xl lg:text-7xl font-bold mb-8 scroll-animate">CONTÁCTANOS</h1>
+        <p class="text-xl md:text-2xl opacity-90 scroll-animate">Estamos aquí para ayudarte a encontrar el terreno perfecto</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Información de Contacto - Sin desbordes -->
+  <section class="py-20 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <!-- Teléfonos -->
+        <div class="bg-white rounded-3xl p-8 text-center shadow-xl scroll-animate">
+          <div class="w-20 h-20 bg-primary text-white rounded-full flex items-center justify-center mx-auto mb-6 text-3xl">
+            <i class="fas fa-phone-alt"></i>
+          </div>
+          <h3 class="text-xl font-bold text-primary mb-6">Teléfonos</h3>
+          <div class="text-sm text-gray-700 space-y-4 mb-8">
+            <p><strong>Oficina Central:</strong><br>+52 555 123 4567</p>
+            <p><strong>WhatsApp:</strong><br>+52 555 987 6543</p>
+            <p><strong>Emergencias:</strong><br>+52 555 456 7890</p>
+          </div>
+          <a href="tel:+525551234567" class="text-primary font-semibold hover:text-secondary transition flex items-center justify-center gap-2">
+            Llamar Ahora <i class="fas fa-phone"></i>
+          </a>
+        </div>
+
+        <!-- Correos -->
+        <div class="bg-white rounded-3xl p-8 text-center shadow-xl scroll-animate">
+          <div class="w-20 h-20 bg-primary text-white rounded-full flex items-center justify-center mx-auto mb-6 text-3xl">
+            <i class="fas fa-envelope"></i>
+          </div>
+          <h3 class="text-xl font-bold text-primary mb-6">Correos Electrónicos</h3>
+          <div class="text-sm text-gray-700 space-y-4 mb-8">
+            <p><strong>General:</strong><br>contacto@amareinmobiliaria.com</p>
+            <p><strong>Ventas:</strong><br>ventas@amareinmobiliaria.com</p>
+            <p><strong>Asesoría:</strong><br>asesoria@amareinmobiliaria.com</p>
+          </div>
+          <a href="mailto:contacto@amareinmobiliaria.com" class="text-primary font-semibold hover:text-secondary transition flex items-center justify-center gap-2">
+            Enviar Correo <i class="fas fa-paper-plane"></i>
+          </a>
+        </div>
+
+        <!-- Dirección -->
+        <div class="bg-white rounded-3xl p-8 text-center shadow-xl scroll-animate">
+          <div class="w-20 h-20 bg-primary text-white rounded-full flex items-center justify-center mx-auto mb-6 text-3xl">
+            <i class="fas fa-map-marker-alt"></i>
+          </div>
+          <h3 class="text-xl font-bold text-primary mb-6">Oficina Central</h3>
+          <div class="text-sm text-gray-700 space-y-4 mb-8">
+            <p><strong>Dirección:</strong><br>Av. Principal 123, Col. Centro</p>
+            <p><strong>Ciudad:</strong><br>Ciudad de México, CP 12345</p>
+            <p><strong>Referencia:</strong><br>Entre Calle Reforma y Calle Independencia</p>
+          </div>
+          <a href="https://maps.google.com" target="_blank" class="text-primary font-semibold hover:text-secondary transition flex items-center justify-center gap-2">
+            Ver en Mapa <i class="fas fa-map"></i>
+          </a>
+        </div>
+
+        <!-- Horarios -->
+        <div class="bg-white rounded-3xl p-8 text-center shadow-xl scroll-animate">
+          <div class="w-20 h-20 bg-primary text-white rounded-full flex items-center justify-center mx-auto mb-6 text-3xl">
+            <i class="fas fa-clock"></i>
+          </div>
+          <h3 class="text-xl font-bold text-primary mb-6">Horarios de Atención</h3>
+          <div class="text-sm text-gray-700 space-y-4 mb-8">
+            <p><strong>Lun-Vie:</strong> 9:00 AM - 7:00 PM</p>
+            <p><strong>Sábados:</strong> 10:00 AM - 2:00 PM</p>
+            <p><strong>Domingos:</strong> Solo citas programadas</p>
+            <p><strong>Virtual:</strong> 24/7 por WhatsApp</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Redes Sociales - SIMPLE Y EXACTO A TU CAPTURA -->
+  <section class="py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-6 text-center">
+      <h2 class="text-4xl md:text-5xl font-bold text-primary mb-6 scroll-animate">Síguenos en Nuestras Redes Sociales</h2>
+      <p class="text-xl text-gray-600 mb-16 max-w-4xl mx-auto scroll-animate">
+        Conoce las mejores propiedades, promociones exclusivas y mantente al día con las últimas novedades del mercado inmobiliario
+      </p>
+
+      <div class="flex flex-wrap justify-center gap-10 md:gap-16">
+        <!-- Facebook -->
+        <a href="#" target="_blank" class="scroll-animate">
+          <div class="bg-gradient-to-b from-blue-700 to-blue-900 text-white w-48 h-80 rounded-3xl flex flex-col items-center justify-end pb-10 shadow-2xl hover:shadow-3xl hover:-translate-y-4 transition-all duration-500">
+            <i class="fab fa-facebook-f text-8xl mb-16"></i>
+            <p class="font-bold text-lg">@AmareInmobiliaria</p>
+            <p class="text-sm opacity-80">Facebook</p>
+          </div>
+        </a>
+
+        <!-- Instagram -->
+        <a href="#" target="_blank" class="scroll-animate">
+          <div class="bg-gradient-to-br from-purple-600 via-pink-500 to-orange-400 text-white w-48 h-80 rounded-3xl flex flex-col items-center justify-end pb-10 shadow-2xl hover:shadow-3xl hover:-translate-y-4 transition-all duration-500">
+            <i class="fab fa-instagram text-8xl mb-16"></i>
+            <p class="font-bold text-lg">@AmareTerrenos</p>
+            <p class="text-sm opacity-80">Instagram</p>
+          </div>
+        </a>
+
+        <!-- TikTok -->
+        <a href="#" target="_blank" class="scroll-animate">
+          <div class="bg-black text-white w-48 h-80 rounded-3xl flex flex-col items-center justify-end pb-10 shadow-2xl hover:shadow-3xl hover:-translate-y-4 transition-all duration-500">
+            <i class="fab fa-tiktok text-8xl mb-16"></i>
+            <p class="font-bold text-lg">@Amare_Propiedades</p>
+            <p class="text-sm opacity-80">TikTok</p>
+          </div>
+        </a>
+
+        <!-- YouTube -->
+        <a href="#" target="_blank" class="scroll-animate">
+          <div class="bg-red-600 text-white w-48 h-80 rounded-3xl flex flex-col items-center justify-end pb-10 shadow-2xl hover:shadow-3xl hover:-translate-y-4 transition-all duration-500">
+            <i class="fab fa-youtube text-8xl mb-16"></i>
+            <p class="font-bold text-lg">Amare Bienes Raíces</p>
+            <p class="text-sm opacity-80">YouTube</p>
+          </div>
+        </a>
+
+        <!-- WhatsApp -->
+        <a href="https://wa.me/525559876543" target="_blank" class="scroll-animate">
+          <div class="bg-gradient-to-b from-green-500 to-green-600 text-white w-48 h-80 rounded-3xl flex flex-col items-center justify-end pb-10 shadow-2xl hover:shadow-3xl hover:-translate-y-4 transition-all duration-500">
+            <i class="fab fa-whatsapp text-8xl mb-16"></i>
+            <p class="font-bold text-lg">+52 555 987 6543</p>
+            <p class="text-sm opacity-80">WhatsApp</p>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Preguntas Frecuentes - Restaurada -->
+  <section class="py-20 bg-gray-50">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-4xl font-bold text-primary text-center mb-16 scroll-animate">Preguntas Frecuentes</h2>
+
+      <div class="space-y-6">
+        <details class="bg-white rounded-2xl shadow-lg overflow-hidden scroll-animate">
+          <summary class="px-8 py-6 text-xl font-bold text-primary cursor-pointer hover:bg-primary/5 transition">¿Cuál es el proceso para comprar un terreno con AMARE?</summary>
+          <div class="px-8 pb-8 text-gray-700 leading-relaxed">
+            Nuestro proceso incluye: 1) Consulta inicial para entender tus necesidades, 2) Búsqueda y preselección de terrenos, 3) Visitas guiadas, 4) Análisis técnico y legal, 5) Negociación, 6) Gestión de trámites y 7) Entrega y seguimiento post-venta.
+          </div>
+        </details>
+
+        <details class="bg-white rounded-2xl shadow-lg overflow-hidden scroll-animate">
+          <summary class="px-8 py-6 text-xl font-bold text-primary cursor-pointer hover:bg-primary/5 transition">¿Ofrecen financiamiento para la compra de terrenos?</summary>
+          <div class="px-8 pb-8 text-gray-700 leading-relaxed">
+            Sí, trabajamos con diversas instituciones financieras y podemos ayudarte a gestionar créditos hipotecarios para terrenos, además de ofrecer planes de financiamiento directo en algunos de nuestros desarrollos.
+          </div>
+        </details>
+
+        <details class="bg-white rounded-2xl shadow-lg overflow-hidden scroll-animate">
+          <summary class="px-8 py-6 text-xl font-bold text-primary cursor-pointer hover:bg-primary/5 transition">¿Cuánto tiempo toma el proceso de compra?</summary>
+          <div class="px-8 pb-8 text-gray-700 leading-relaxed">
+            El tiempo varía según la complejidad de la transacción, pero en promedio: Búsqueda (1-2 semanas), negociación (1 semana), trámites legales (2-3 semanas). Total aproximado: 4-6 semanas.
+          </div>
+        </details>
+
+        <details class="bg-white rounded-2xl shadow-lg overflow-hidden scroll-animate">
+          <summary class="px-8 py-6 text-xl font-bold text-primary cursor-pointer hover:bg-primary/5 transition">¿Pueden ayudarme a vender un terreno que ya poseo?</summary>
+          <div class="px-8 pb-8 text-gray-700 leading-relaxed">
+            Absolutamente. Ofrecemos servicios de intermediación para venta de terrenos, incluyendo valuación profesional, marketing especializado, gestión de visitas y negociación con compradores calificados.
+          </div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- Ubicación en Mapa -->
+  <section class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-6">
+      <h2 class="text-4xl font-bold text-primary text-center mb-16 scroll-animate">Visita Nuestras Oficinas</h2>
+
+      <div class="grid lg:grid-cols-2 gap-12 items-center">
+        <div class="bg-gradient-to-br from-primary to-secondary text-white rounded-3xl p-10 shadow-2xl scroll-animate">
+          <h3 class="text-3xl font-bold mb-8">Oficina Central AMARE</h3>
+          <div class="space-y-6 text-lg">
+            <p class="flex items-center gap-4"><i class="fas fa-map-marker-alt text-accent"></i> Av. Principal 123, Col. Centro, Ciudad de México, CP 12345</p>
+            <p class="flex items-center gap-4"><i class="fas fa-clock text-accent"></i> Lunes a Viernes 9:00 AM - 7:00 PM</p>
+            <p class="flex items-center gap-4"><i class="fas fa-phone-alt text-accent"></i> +52 555 123 4567</p>
+            <p class="flex items-center gap-4"><i class="fas fa-car text-accent"></i> Estacionamiento gratuito para clientes</p>
+            <p class="flex items-center gap-4"><i class="fas fa-wheelchair text-accent"></i> Acceso para personas con discapacidad</p>
+          </div>
+        </div>
+
+        <div class="bg-gray-200 rounded-3xl h-96 flex items-center justify-center scroll-animate">
+          <div class="text-center text-gray-600">
+            <i class="fas fa-map-marked-alt text-8xl mb-6"></i>
+            <p class="text-2xl font-bold mb-4">Mapa Interactivo</p>
+            <button class="bg-primary text-white px-8 py-4 rounded-full font-bold hover:bg-secondary transition">
+              Abrir en Google Maps
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <Footer slot="footer" />
+</Layout>
+
+<!-- Animaciones al Scroll -->
+<style is:global>
+  .scroll-animate {
+    opacity: 0;
+    transform: translateY(60px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+  }
+
+  .scroll-animate.animated {
+    opacity: 1;
+    transform: translateY(0);
+  }
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const elements = document.querySelectorAll('.scroll-animate');
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('animated');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+    elements.forEach(el => observer.observe(el));
+  });
+</script>

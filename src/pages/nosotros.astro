@@ -1,0 +1,305 @@
+---
+// src/pages/nosotros.astro
+import Layout from '../components/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout title="AMARE Inmobiliaria - Nuestra Historia y Equipo">
+  <Navbar slot="navbar" />
+
+  <!-- Hero Section -->
+  <section class="relative h-screen min-h-[700px] bg-fixed bg-center bg-cover -mt-20" style="background-image: url('https://images.unsplash.com/photo-1512917774080-9991f1c4c750?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80')">
+    <div class="absolute inset-0 bg-gradient-to-b from-black/70 via-primary/90 to-primary/95"></div>
+    <div class="relative z-10 flex items-center justify-center h-full text-center text-white px-6">
+      <div class="max-w-4xl">
+        <h1 class="text-5xl md:text-6xl lg:text-7xl font-bold mb-8 scroll-animate">NUESTRA HISTORIA</h1>
+        <p class="text-xl md:text-2xl opacity-90 scroll-animate">15 años transformando sueños en realidades a través de terrenos</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Historia de la Empresa -->
+  <section class="py-20 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-6">
+      <h2 class="text-4xl font-bold text-primary text-center mb-16 scroll-animate">La Trayectoria de AMARE</h2>
+
+      <div class="grid lg:grid-cols-2 gap-16 items-center">
+        <div class="space-y-8 scroll-animate">
+          <p class="text-lg text-gray-700 leading-relaxed">
+            Fundada en 2008 por los hermanos Martínez, AMARE Inmobiliaria nació con una visión clara: especializarse exclusivamente en la compra y venta de terrenos, un segmento que en ese momento carecía de especialistas dedicados.
+          </p>
+          <p class="text-lg text-gray-700 leading-relaxed">
+            Lo que comenzó como una pequeña oficina con 3 colaboradores, hoy es una empresa líder en el sector, con presencia en 5 estados de la república y un equipo de más de 30 profesionales especializados.
+          </p>
+          <p class="text-lg text-gray-700 leading-relaxed">
+            Nuestro nombre, <strong>AMARE</strong>, proviene del latín "amar", porque entendemos que un terreno no es solo una inversión, es el lugar donde se construirán hogares, negocios, comunidades y sueños.
+          </p>
+
+          <!-- Timeline Minimalista -->
+          <div class="space-y-8 mt-12">
+            <div class="flex gap-6 scroll-animate">
+              <div class="w-20 h-20 bg-primary text-white rounded-full flex items-center justify-center text-2xl font-bold flex-shrink-0 shadow-lg">2008</div>
+              <p class="text-gray-700 pt-6">Fundación de AMARE Inmobiliaria en la Ciudad de México</p>
+            </div>
+            <div class="flex gap-6 scroll-animate">
+              <div class="w-20 h-20 bg-primary text-white rounded-full flex items-center justify-center text-2xl font-bold flex-shrink-0 shadow-lg">2012</div>
+              <p class="text-gray-700 pt-6">Expansión a 3 ciudades adicionales y primer desarrollo propio</p>
+            </div>
+            <div class="flex gap-6 scroll-animate">
+              <div class="w-20 h-20 bg-primary text-white rounded-full flex items-center justify-center text-2xl font-bold flex-shrink-0 shadow-lg">2016</div>
+              <p class="text-gray-700 pt-6">Alcanzamos los 100 terrenos vendidos y consolidamos nuestro equipo</p>
+            </div>
+            <div class="flex gap-6 scroll-animate">
+              <div class="w-20 h-20 bg-primary text-white rounded-full flex items-center justify-center text-2xl font-bold flex-shrink-0 shadow-lg">2020</div>
+              <p class="text-gray-700 pt-6">Implementación de tecnología avanzada para búsqueda y valuación</p>
+            </div>
+            <div class="flex gap-6 scroll-animate">
+              <div class="w-20 h-20 bg-primary text-white rounded-full flex items-center justify-center text-2xl font-bold flex-shrink-0 shadow-lg">2023</div>
+              <p class="text-gray-700 pt-6">Superamos los 500 terrenos vendidos y expandimos a 5 estados</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-gradient-to-br from-primary to-secondary rounded-3xl h-96 flex items-center justify-center text-white scroll-animate">
+          <div class="text-center px-8">
+            <i class="fas fa-history text-7xl text-accent mb-6"></i>
+            <p class="text-3xl font-bold">Nuestra Evolución</p>
+            <p class="text-xl opacity-90">2008 - 2025</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Misión, Visión y Valores -->
+  <section class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-6">
+      <h2 class="text-4xl font-bold text-primary text-center mb-16 scroll-animate">Nuestra Filosofía</h2>
+
+      <div class="grid md:grid-cols-3 gap-12">
+        <div class="text-center scroll-animate">
+          <div class="w-24 h-24 bg-accent text-primary rounded-full flex items-center justify-center mx-auto mb-6 text-4xl shadow-lg">
+            <i class="fas fa-bullseye"></i>
+          </div>
+          <h3 class="text-2xl font-bold text-primary mb-4">Misión</h3>
+          <p class="text-gray-700 leading-relaxed">
+            Conectar a las personas con el terreno ideal que les permita construir sus proyectos de vida, ofreciendo asesoría especializada, transparencia y un acompañamiento integral en cada etapa del proceso.
+          </p>
+        </div>
+
+        <div class="text-center scroll-animate">
+          <div class="w-24 h-24 bg-accent text-primary rounded-full flex items-center justify-center mx-auto mb-6 text-4xl shadow-lg">
+            <i class="fas fa-eye"></i>
+          </div>
+          <h3 class="text-2xl font-bold text-primary mb-4">Visión</h3>
+          <p class="text-gray-700 leading-relaxed">
+            Ser la inmobiliaria líder en venta de terrenos en México, reconocida por nuestra especialización, innovación en servicios y contribución al desarrollo sostenible de comunidades.
+          </p>
+        </div>
+
+        <div class="text-center scroll-animate">
+          <div class="w-24 h-24 bg-accent text-primary rounded-full flex items-center justify-center mx-auto mb-6 text-4xl shadow-lg">
+            <i class="fas fa-heart"></i>
+          </div>
+          <h3 class="text-2xl font-bold text-primary mb-4">Valores</h3>
+          <ul class="text-left text-gray-700 space-y-3 mt-6 max-w-sm mx-auto">
+            <li class="flex items-start gap-3"><span class="text-accent font-bold">•</span> <strong>Integridad:</strong> Honestidad y transparencia en cada transacción</li>
+            <li class="flex items-start gap-3"><span class="text-accent font-bold">•</span> <strong>Especialización:</strong> Conocimiento profundo del mercado de terrenos</li>
+            <li class="flex items-start gap-3"><span class="text-accent font-bold">•</span> <strong>Compromiso:</strong> Acompañamiento más allá del cierre</li>
+            <li class="flex items-start gap-3"><span class="text-accent font-bold">•</span> <strong>Innovación:</strong> Uso de tecnología para mejores resultados</li>
+            <li class="flex items-start gap-3"><span class="text-accent font-bold">•</span> <strong>Responsabilidad Social:</strong> Desarrollo sostenible de comunidades</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Nuestro Equipo -->
+  <section class="py-20 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-6">
+      <h2 class="text-4xl font-bold text-primary text-center mb-6 scroll-animate">Nuestro Equipo</h2>
+      <p class="text-xl text-gray-600 text-center mb-16 scroll-animate">Profesionales apasionados por encontrar el terreno perfecto para cada cliente</p>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-12">
+        <!-- Miembro del equipo (repetir estructura) -->
+        <div class="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-shadow scroll-animate">
+          <div class="h-64 bg-gradient-to-br from-primary to-secondary flex items-center justify-center text-white">
+            <i class="fas fa-user-tie text-8xl opacity-50"></i>
+          </div>
+          <div class="p-8 text-center">
+            <h3 class="text-2xl font-bold text-primary mb-2">Ricardo Martínez</h3>
+            <p class="text-accent font-semibold mb-4">Director General y Fundador</p>
+            <p class="text-gray-700 mb-6">Ingeniero civil con más de 20 años de experiencia en desarrollo inmobiliario. Fundador de AMARE y especialista en terrenos de alto valor.</p>
+            <div class="text-sm text-gray-600 space-y-2">
+              <p><i class="fas fa-envelope mr-2"></i> ricardo@amare.com</p>
+              <p><i class="fas fa-phone-alt mr-2"></i> Ext. 101</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-shadow scroll-animate">
+          <div class="h-64 bg-gradient-to-br from-primary to-secondary flex items-center justify-center text-white">
+            <i class="fas fa-user-tie text-8xl opacity-50"></i>
+          </div>
+          <div class="p-8 text-center">
+            <h3 class="text-2xl font-bold text-primary mb-2">Ana Martínez</h3>
+            <p class="text-accent font-semibold mb-4">Directora Comercial y Co-Fundadora</p>
+            <p class="text-gray-700 mb-6">Licenciada en administración con maestría en finanzas. Lidera el área comercial y se especializa en proyectos de inversión y desarrollo.</p>
+            <div class="text-sm text-gray-600 space-y-2">
+              <p><i class="fas fa-envelope mr-2"></i> ana@amare.com</p>
+              <p><i class="fas fa-phone-alt mr-2"></i> Ext. 102</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Repite los otros 4 miembros con la misma estructura -->
+        <div class="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-shadow scroll-animate">
+          <div class="h-64 bg-gradient-to-br from-primary to-secondary flex items-center justify-center text-white">
+            <i class="fas fa-user-tie text-8xl opacity-50"></i>
+          </div>
+          <div class="p-8 text-center">
+            <h3 class="text-2xl font-bold text-primary mb-2">Carlos Fernández</h3>
+            <p class="text-accent font-semibold mb-4">Gerente de Operaciones</p>
+            <p class="text-gray-700 mb-6">Arquitecto con especialización en urbanismo. Supervisa la gestión de proyectos y asegura la calidad en todos nuestros servicios.</p>
+            <div class="text-sm text-gray-600 space-y-2">
+              <p><i class="fas fa-envelope mr-2"></i> carlos@amare.com</p>
+              <p><i class="fas fa-phone-alt mr-2"></i> Ext. 103</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-shadow scroll-animate">
+          <div class="h-64 bg-gradient-to-br from-primary to-secondary flex items-center justify-center text-white">
+            <i class="fas fa-user-tie text-8xl opacity-50"></i>
+          </div>
+          <div class="p-8 text-center">
+            <h3 class="text-2xl font-bold text-primary mb-2">Laura Sánchez</h3>
+            <p class="text-accent font-semibold mb-4">Jefa de Asesores Comerciales</p>
+            <p class="text-gray-700 mb-6">Licenciada en mercadotecnia con 8 años de experiencia en bienes raíces. Entrena y supervisa a nuestro equipo de asesores especializados.</p>
+            <div class="text-sm text-gray-600 space-y-2">
+              <p><i class="fas fa-envelope mr-2"></i> laura@amare.com</p>
+              <p><i class="fas fa-phone-alt mr-2"></i> Ext. 104</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-shadow scroll-animate">
+          <div class="h-64 bg-gradient-to-br from-primary to-secondary flex items-center justify-center text-white">
+            <i class="fas fa-user-tie text-8xl opacity-50"></i>
+          </div>
+          <div class="p-8 text-center">
+            <h3 class="text-2xl font-bold text-primary mb-2">Miguel Ángel Torres</h3>
+            <p class="text-accent font-semibold mb-4">Especialista Legal</p>
+            <p class="text-gray-700 mb-6">Abogado con maestría en derecho inmobiliario. Garantiza la seguridad jurídica de todas nuestras transacciones.</p>
+            <div class="text-sm text-gray-600 space-y-2">
+              <p><i class="fas fa-envelope mr-2"></i> miguel@amare.com</p>
+              <p><i class="fas fa-phone-alt mr-2"></i> Ext. 105</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-shadow scroll-animate">
+          <div class="h-64 bg-gradient-to-br from-primary to-secondary flex items-center justify-center text-white">
+            <i class="fas fa-user-tie text-8xl opacity-50"></i>
+          </div>
+          <div class="p-8 text-center">
+            <h3 class="text-2xl font-bold text-primary mb-2">Sofía Ramírez</h3>
+            <p class="text-accent font-semibold mb-4">Analista de Mercado</p>
+            <p class="text-gray-700 mb-6">Economista especializada en análisis de mercados inmobiliarios. Proporciona estudios de plusvalía y tendencias.</p>
+            <div class="text-sm text-gray-600 space-y-2">
+              <p><i class="fas fa-envelope mr-2"></i> sofia@amare.com</p>
+              <p><i class="fas fa-phone-alt mr-2"></i> Ext. 106</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Certificaciones -->
+  <section class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-6">
+      <h2 class="text-4xl font-bold text-primary text-center mb-16 scroll-animate">Certificaciones y Reconocimientos</h2>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-10">
+        <div class="text-center scroll-animate">
+          <div class="w-24 h-24 bg-primary text-white rounded-full flex items-center justify-center mx-auto mb-6 text-4xl shadow-lg">
+            <i class="fas fa-award"></i>
+          </div>
+          <h3 class="text-xl font-bold text-primary mb-3">Certificación AMPI</h3>
+          <p class="text-gray-700">Miembros activos de la Asociación Mexicana de Profesionales Inmobiliarios desde 2010.</p>
+        </div>
+
+        <div class="text-center scroll-animate">
+          <div class="w-24 h-24 bg-primary text-white rounded-full flex items-center justify-center mx-auto mb-6 text-4xl shadow-lg">
+            <i class="fas fa-shield-alt"></i>
+          </div>
+          <h3 class="text-xl font-bold text-primary mb-3">Seguridad Jurídica</h3>
+          <p class="text-gray-700">Certificados en transacciones seguras con auditoría legal anual desde 2015.</p>
+        </div>
+
+        <div class="text-center scroll-animate">
+          <div class="w-24 h-24 bg-primary text-white rounded-full flex items-center justify-center mx-auto mb-6 text-4xl shadow-lg">
+            <i class="fas fa-medal"></i>
+          </div>
+          <h3 class="text-xl font-bold text-primary mb-3">Premio Excelencia 2022</h3>
+          <p class="text-gray-700">Reconocidos como la mejor inmobiliaria especializada en terrenos por la Cámara de Comercio.</p>
+        </div>
+
+        <div class="text-center scroll-animate">
+          <div class="w-24 h-24 bg-primary text-white rounded-full flex items-center justify-center mx-auto mb-6 text-4xl shadow-lg">
+            <i class="fas fa-handshake"></i>
+          </div>
+          <h3 class="text-xl font-bold text-primary mb-3">Ética Profesional</h3>
+          <p class="text-gray-700">Calificación de 4.9/5 en ética profesional según encuestas a clientes 2023.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Final -->
+  <section class="py-24 bg-gradient-to-r from-primary via-secondary to-accent text-white">
+    <div class="max-w-4xl mx-auto px-6 text-center">
+      <h2 class="text-4xl md:text-5xl font-bold mb-8 scroll-animate">¿Quieres ser parte de nuestro equipo?</h2>
+      <p class="text-xl mb-12 opacity-90 scroll-animate">
+        Estamos siempre en búsqueda de talento apasionado por el sector inmobiliario.
+      </p>
+      <a href="/contacto" class="btn-primary text-xl px-12 py-5 shadow-2xl hover:shadow-3xl transform hover:-translate-y-2 transition-all duration-500 inline-flex items-center scroll-animate">
+        Ver Vacantes <i class="fas fa-briefcase ml-4"></i>
+      </a>
+    </div>
+  </section>
+
+  <Footer slot="footer" />
+</Layout>
+
+<style is:global>
+  .scroll-animate {
+    opacity: 0;
+    transform: translateY(60px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+  }
+
+  .scroll-animate.animated {
+    opacity: 1;
+    transform: translateY(0);
+  }
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const elements = document.querySelectorAll('.scroll-animate');
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('animated');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+    elements.forEach(el => observer.observe(el));
+  });
+</script>
