@@ -1,10 +1,9 @@
 ---
-// src/pages/index.astro
+// src/pages/index.astro (COMPLETO CON TODOS LOS LUGARES TURÍSTICOS)
 import Layout from '../components/Layout.astro';
 import Navbar from '../components/Navbar.astro';
 import Footer from '../components/Footer.astro';
 
-// Datos de proyectos
 const projects = [
   {
     category: 'residencial',
@@ -79,208 +78,181 @@ const projects = [
   <Navbar slot="navbar" />
 
   <!-- Hero Section -->
-  <section class="relative h-screen min-h-[700px] bg-fixed bg-center bg-cover -mt-20" style="background-image: url('https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?ixlib=rb-4.0.3&auto=format&fit=crop&w=1474&q=80')">
-    <div class="absolute inset-0 bg-gradient-to-b from-black/10 via-primary/40 to-primary/65"></div>
+  <section class="relative h-[80vh] md:h-screen min-h-[600px] bg-fixed bg-center bg-cover -mt-20 hero-section">
+    <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?ixlib=rb-4.0.3&auto=format&fit=crop&w=1474&q=80')">
+      <div class="absolute inset-0 bg-gradient-to-b from-black/20 via-primary/60 to-primary/90"></div>
+    </div>
     <div class="relative z-10 flex items-center justify-center h-full text-center text-white px-6">
       <div class="max-w-5xl">
-        <h1 class="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 animate-fade-in">DESCUBRE TU TERRENO IDEAL</h1>
-        <p class="text-xl md:text-2xl mb-12 max-w-3xl mx-auto opacity-95 animate-[fadeInUp_1s_0.3s_forwards]">Explora nuestra exclusiva selección de terrenos residenciales, comerciales y de inversión</p>
+        <h1 class="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 drop-shadow-2xl">DESCUBRE TU TERRENO IDEAL</h1>
+        <p class="text-lg md:text-2xl mb-12 max-w-3xl mx-auto opacity-95">Explora nuestra exclusiva selección de terrenos residenciales, comerciales y de inversión</p>
         
-		<!-- Hero Stats - Ahora con animación de conteo real -->
-		<div class="flex flex-wrap justify-center gap-12 md:gap-20 text-center">
-		<div class="animate-[fadeInUp_1s_0.6s_forwards] opacity-0">
-			<span class="count-up block text-4xl md:text-5xl font-bold text-accent" data-target="50">0</span><span class="text-accent text-4xl md:text-5xl font-bold"></span>
-			<span class="text-lg text-white/90">Proyectos Activos</span>
-		</div>
-		<div class="animate-[fadeInUp_1s_0.9s_forwards] opacity-0">
-			<span class="count-up block text-4xl md:text-5xl font-bold text-accent" data-target="15">0</span>
-			<span class="text-lg text-white/90">Años de Experiencia</span>
-		</div>
-		<div class="animate-[fadeInUp_1s_1.2s_forwards] opacity-0">
-			<span class="count-up block text-4xl md:text-5xl font-bold text-accent" data-target="120">0</span><span class="text-accent text-4xl md:text-5xl font-bold"></span>
-			<span class="text-lg text-white/90">Terrenos Vendidos</span>
-		</div>
-		</div>
-
+        <div class="flex flex-wrap justify-center gap-8 md:gap-16 text-center">
+          <div>
+            <span class="count-up block text-4xl md:text-5xl font-bold text-accent" data-target="50">0</span><span class="text-accent text-4xl md:text-5xl font-bold"></span>
+            <p class="text-base md:text-lg text-white/90 mt-2">Proyectos Activos</p>
+          </div>
+          <div>
+            <span class="count-up block text-4xl md:text-5xl font-bold text-accent" data-target="5">0</span><span class="text-accent text-4xl md:text-5xl font-bold"></span>
+            <p class="text-base md:text-lg text-white/90 mt-2">Años de Experiencia</p>
+          </div>
+          <div>
+            <span class="count-up block text-4xl md:text-5xl font-bold text-accent" data-target="120">0</span><span class="text-accent text-4xl md:text-5xl font-bold"></span>
+            <p class="text-base md:text-lg text-white/90 mt-2">Terrenos Vendidos</p>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
   <!-- Filtros -->
-  <section class="py-16 bg-gray-50">
+  <section class="py-12 md:py-16 bg-gray-50">
     <div class="max-w-7xl mx-auto px-6 text-center">
-      <h2 class="text-4xl font-bold text-primary mb-4 animate-[fadeInUp_1s_0.2s_forwards]">Nuestros Proyectos</h2>
-      <p class="text-lg text-gray-600 mb-10 animate-[fadeInUp_1s_0.4s_forwards]">Filtra por tipo de terreno que estás buscando</p>
+      <h2 class="text-3xl md:text-4xl font-bold text-primary mb-6">Nuestros Proyectos</h2>
+      <p class="text-base md:text-lg text-gray-600 mb-8">Filtra por tipo de terreno que estás buscando</p>
 
-      <div class="flex flex-wrap justify-center gap-4" id="filters">
-        <button class="filter-btn px-8 py-3 bg-primary text-white rounded-full font-semibold transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1 active:scale-95" data-filter="all">Todos los Proyectos</button>
-        <button class="filter-btn px-8 py-3 bg-gray-200 text-gray-800 rounded-full font-semibold transition-all duration-300 shadow-md hover:bg-primary hover:text-white hover:shadow-xl hover:-translate-y-1" data-filter="residencial">Residenciales</button>
-        <button class="filter-btn px-8 py-3 bg-gray-200 text-gray-800 rounded-full font-semibold transition-all duration-300 shadow-md hover:bg-primary hover:text-white hover:shadow-xl hover:-translate-y-1" data-filter="comercial">Comerciales</button>
-        <button class="filter-btn px-8 py-3 bg-gray-200 text-gray-800 rounded-full font-semibold transition-all duration-300 shadow-md hover:bg-primary hover:text-white hover:shadow-xl hover:-translate-y-1" data-filter="industrial">Industriales</button>
-        <button class="filter-btn px-8 py-3 bg-gray-200 text-gray-800 rounded-full font-semibold transition-all duration-300 shadow-md hover:bg-primary hover:text-white hover:shadow-xl hover:-translate-y-1" data-filter="inversion">Inversión</button>
+      <div class="flex flex-wrap justify-center gap-4">
+        <button class="filter-btn px-6 py-3 md:px-8 md:py-3 bg-primary text-white rounded-full font-semibold text-sm md:text-base shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all" data-filter="all">Todos</button>
+        <button class="filter-btn px-6 py-3 md:px-8 md:py-3 bg-gray-200 text-gray-800 rounded-full font-semibold text-sm md:text-base shadow-md hover:bg-primary hover:text-white transition-all" data-filter="residencial">Residenciales</button>
+        <button class="filter-btn px-6 py-3 md:px-8 md:py-3 bg-gray-200 text-gray-800 rounded-full font-semibold text-sm md:text-base shadow-md hover:bg-primary hover:text-white transition-all" data-filter="comercial">Comerciales</button>
+        <button class="filter-btn px-6 py-3 md:px-8 md:py-3 bg-gray-200 text-gray-800 rounded-full font-semibold text-sm md:text-base shadow-md hover:bg-primary hover:text-white transition-all" data-filter="industrial">Industriales</button>
+        <button class="filter-btn px-6 py-3 md:px-8 md:py-3 bg-gray-200 text-gray-800 rounded-full font-semibold text-sm md:text-base shadow-md hover:bg-primary hover:text-white transition-all" data-filter="inversion">Inversión</button>
       </div>
     </div>
   </section>
 
-  <!-- Grid de Proyectos - Versión Minimalista -->
-<section class="py-20 bg-white" id="proyectos">
-  <div class="max-w-7xl mx-auto px-6">
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12" id="projects-grid">
-      {projects.map((project) => (
-        <article 
-          class="group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-shadow duration-500"
-          data-category={project.category}
-        >
-          <!-- Imagen -->
-          <div class="relative h-72 bg-cover bg-center" style={`background-image: url(${project.image})`}>
-            <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-            <span class="absolute top-4 right-4 bg-white/90 text-primary text-xs font-semibold px-4 py-2 rounded-full backdrop-blur-sm">
-              {project.badge}
-            </span>
-          </div>
-
-          <!-- Contenido -->
-          <div class="p-8">
-            <h3 class="text-2xl font-bold text-primary mb-3">{project.title}</h3>
-            <p class="text-gray-600 flex items-center gap-2 mb-6 text-base">
-              <i class="fas fa-map-marker-alt text-primary"></i> {project.location}
-            </p>
-            <p class="text-gray-700 mb-8 leading-relaxed line-clamp-3">{project.description}</p>
-
-            <!-- Características Minimalistas (solo ícono + texto) -->
-            <div class="grid grid-cols-3 gap-6 mb-10 text-center">
-              <div>
-                <i class="fas fa-ruler-combined text-primary text-2xl mb-2 block"></i>
-                <p class="text-sm text-gray-700 font-medium">{project.size}</p>
-              </div>
-              <div>
-                <i class="fas fa-tags text-primary text-2xl mb-2 block"></i>
-                <p class="text-sm font-bold text-primary">{project.price}</p>
-              </div>
-              <div>
-                <i class="fas fa-calendar-alt text-primary text-2xl mb-2 block"></i>
-                <p class="text-sm text-gray-700 font-medium">{project.availability}</p>
-              </div>
+  <!-- Proyectos Grid -->
+  <section class="py-16 md:py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 md:gap-12" id="projects-grid">
+        {projects.map((project) => (
+          <article class="group bg-white rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500" data-category={project.category}>
+            <div class="relative h-64 md:h-72 bg-cover bg-center">
+              <img src={project.image} alt={project.title} class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+              <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              <span class="absolute top-4 right-4 bg-white/90 text-primary text-xs md:text-sm font-bold px-4 py-2 rounded-full shadow-md">
+                {project.badge}
+              </span>
             </div>
 
-            <!-- Botones Minimalistas -->
-            <div class="flex flex-col sm:flex-row gap-4">
-              <a href="#" class="flex items-center justify-center gap-2 text-primary font-semibold hover:text-secondary transition-colors">
-                Ver Detalles <i class="fas fa-arrow-right text-sm"></i>
-              </a>
-              <a href="#" class="flex items-center justify-center gap-2 text-primary font-semibold hover:text-secondary transition-colors">
-                Agendar Visita <i class="fas fa-calendar-check text-sm"></i>
-              </a>
+            <div class="p-6 md:p-8">
+              <h3 class="text-xl md:text-2xl font-bold text-primary mb-3">{project.title}</h3>
+              <p class="text-gray-600 flex items-center gap-2 mb-4 text-sm md:text-base">
+                <i class="fas fa-map-marker-alt text-primary"></i> {project.location}
+              </p>
+              <p class="text-gray-700 mb-6 leading-relaxed text-sm md:text-base line-clamp-3">{project.description}</p>
+
+              <div class="grid grid-cols-3 gap-4 mb-8 text-center">
+                <div>
+                  <i class="fas fa-ruler-combined text-primary text-xl md:text-2xl mb-2 block"></i>
+                  <p class="text-xs md:text-sm text-gray-700">{project.size}</p>
+                </div>
+                <div>
+                  <i class="fas fa-tags text-primary text-xl md:text-2xl mb-2 block"></i>
+                  <p class="text-xs md:text-sm font-bold text-primary">{project.price}</p>
+                </div>
+                <div>
+                  <i class="fas fa-calendar-alt text-primary text-xl md:text-2xl mb-2 block"></i>
+                  <p class="text-xs md:text-sm text-gray-700">{project.availability}</p>
+                </div>
+              </div>
+
+              <div class="text-center">
+                <a href="/detalle-proyecto" class="inline-flex items-center justify-center gap-3 bg-primary text-white font-bold px-8 py-4 rounded-full shadow-lg hover:bg-secondary hover:shadow-xl hover:-translate-y-1 transition-all duration-300 text-sm md:text-base">
+                  Ver Detalles <i class="fas fa-arrow-right"></i>
+                </a>
+              </div>
             </div>
-          </div>
-        </article>
-      ))}
+          </article>
+        ))}
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
-
-  <!-- SECCIÓN MEJORADA: Explora la Región - Diseño Moderno 2025 -->
-  <section class="py-28 relative overflow-hidden bg-gradient-to-b from-white to-gray-100">
-    <!-- Fondo sutil -->
-    <div class="absolute inset-0 opacity-15 pointer-events-none">
-      <div class="absolute inset-0 bg-[url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQrEUydKU6zYL-kvbWc0fNtGOITZYx7q3D_uQ&s)] bg-cover bg-center"></div>
-    </div>
-
-    <div class="relative max-w-7xl mx-auto px-6">
-      <div class="text-center mb-20 scroll-animate">
-        <h2 class="text-5xl md:text-6xl font-bold text-primary mb-6">Explora la Región</h2>
-        <p class="text-xl md:text-2xl text-gray-600 max-w-4xl mx-auto">
+  <!-- Explora la Región - TODOS LOS 6 LUGARES TURÍSTICOS COMPLETOS -->
+  <section class="py-16 md:py-28 bg-gradient-to-b from-white to-gray-100">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="text-center mb-12 md:mb-20">
+        <h2 class="text-4xl md:text-5xl font-bold text-primary mb-6">Explora la Región</h2>
+        <p class="text-base md:text-xl text-gray-600 max-w-3xl mx-auto">
           Nuestros terrenos están ubicados en uno de los destinos más hermosos y con mayor potencial de México: la Costa e Istmo de Oaxaca
         </p>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         <!-- Huatulco -->
-        <div class="group relative h-96 rounded-3xl overflow-hidden shadow-2xl scroll-animate">
-          <div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110" 
-               style="background-image: url('https://bahiasdehuatulco.org/wp-content/uploads/2023/10/las-bahias-de-huatulco.jpg')"></div>
+        <div class="group relative h-80 md:h-96 rounded-3xl overflow-hidden shadow-2xl">
+          <div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110" style="background-image: url('https://static.wixstatic.com/media/a3b865_e5ae4ead4aa74d1290f7121627ffbf45~mv2.jpeg/v1/fill/w_980,h_735,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/Dron%20Coral%20Blue%202.jpeg')"></div>
           <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent"></div>
-          
-          <div class="relative h-full flex flex-col justify-end p-10 text-white translate-y-8 group-hover:translate-y-0 transition-transform duration-500">
-            <i class="fas fa-umbrella-beach text-5xl mb-4 opacity-80"></i>
-            <h3 class="text-3xl font-bold mb-3">Huatulco</h3>
-            <p class="text-lg leading-relaxed opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-200">
+          <div class="relative h-full flex flex-col justify-end p-6 md:p-10 text-white translate-y-8 group-hover:translate-y-0 transition-transform duration-500">
+            <i class="fas fa-umbrella-beach text-4xl md:text-5xl mb-4 opacity-80"></i>
+            <h3 class="text-2xl md:text-3xl font-bold mb-3">Huatulco</h3>
+            <p class="text-base md:text-lg opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-200">
               9 bahías paradisíacas, ecolodges de lujo y uno de los desarrollos turísticos más sostenibles de México.
             </p>
           </div>
         </div>
 
         <!-- Puerto Escondido -->
-        <div class="group relative h-96 rounded-3xl overflow-hidden shadow-2xl scroll-animate">
-          <div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110" 
-               style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQepB599GHZ2didlLNQtZbcX08x1nfJc7wz_A&s')"></div>
+        <div class="group relative h-80 md:h-96 rounded-3xl overflow-hidden shadow-2xl">
+          <div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110" style="background-image: url('https://rosyramales.com/wp-content/uploads/2025/06/Puerto-Escondido--900x425.jpg')"></div>
           <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent"></div>
-          
-          <div class="relative h-full flex flex-col justify-end p-10 text-white translate-y-8 group-hover:translate-y-0 transition-transform duration-500">
-            <i class="fas fa-water text-5xl mb-4 opacity-80"></i>
-            <h3 class="text-3xl font-bold mb-3">Puerto Escondido</h3>
-            <p class="text-lg leading-relaxed opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-200">
+          <div class="relative h-full flex flex-col justify-end p-6 md:p-10 text-white translate-y-8 group-hover:translate-y-0 transition-transform duration-500">
+            <i class="fas fa-water text-4xl md:text-5xl mb-4 opacity-80"></i>
+            <h3 class="text-2xl md:text-3xl font-bold mb-3">Puerto Escondido</h3>
+            <p class="text-base md:text-lg opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-200">
               Capital del surf mexicano, playas salvajes y un boom inmobiliario impulsado por el turismo internacional.
             </p>
           </div>
         </div>
 
         <!-- Zipolite & Mazunte -->
-        <div class="group relative h-96 rounded-3xl overflow-hidden shadow-2xl scroll-animate">
-          <div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110" 
-               style="background-image: url('https://visitmexico.com/media/usercontent/67feb41f9e7e0-galeria_mazunte_4_gmxdot_jpg')"></div>
+        <div class="group relative h-80 md:h-96 rounded-3xl overflow-hidden shadow-2xl">
+          <div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110" style="background-image: url('https://visitmexico.com/media/usercontent/67feb41f9e7e0-galeria_mazunte_4_gmxdot_jpg')"></div>
           <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent"></div>
-          
-          <div class="relative h-full flex flex-col justify-end p-10 text-white translate-y-8 group-hover:translate-y-0 transition-transform duration-500">
-            <i class="fas fa-sun text-5xl mb-4 opacity-80"></i>
-            <h3 class="text-3xl font-bold mb-3">Zipolite & Mazunte</h3>
-            <p class="text-lg leading-relaxed opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-200">
+          <div class="relative h-full flex flex-col justify-end p-6 md:p-10 text-white translate-y-8 group-hover:translate-y-0 transition-transform duration-500">
+            <i class="fas fa-sun text-4xl md:text-5xl mb-4 opacity-80"></i>
+            <h3 class="text-2xl md:text-3xl font-bold mb-3">Zipolite & Mazunte</h3>
+            <p class="text-base md:text-lg opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-200">
               Espíritu libre, playas nudistas, santuario de tortugas y una comunidad artística vibrante.
             </p>
           </div>
         </div>
 
         <!-- Lagunas de Chacahua -->
-        <div class="group relative h-96 rounded-3xl overflow-hidden shadow-2xl scroll-animate">
-          <div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110" 
-               style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSrXlHu47hfwKWQ2OJxLEFn5-tqNgxmMA4Gyg&s')"></div>
+        <div class="group relative h-80 md:h-96 rounded-3xl overflow-hidden shadow-2xl">
+          <div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110" style="background-image: url('https://blackstonehuatulco.com/wp-content/uploads/2024/04/parque-nacional-lagunas-de-chacahua-6-scaled.webp')"></div>
           <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent"></div>
-          
-          <div class="relative h-full flex flex-col justify-end p-10 text-white translate-y-8 group-hover:translate-y-0 transition-transform duration-500">
-            <i class="fas fa-spa text-5xl mb-4 opacity-80"></i>
-            <h3 class="text-3xl font-bold mb-3">Lagunas de Chacahua</h3>
-            <p class="text-lg leading-relaxed opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-200">
+          <div class="relative h-full flex flex-col justify-end p-6 md:p-10 text-white translate-y-8 group-hover:translate-y-0 transition-transform duration-500">
+            <i class="fas fa-spa text-4xl md:text-5xl mb-4 opacity-80"></i>
+            <h3 class="text-2xl md:text-3xl font-bold mb-3">Lagunas de Chacahua</h3>
+            <p class="text-base md:text-lg opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-200">
               Bioluminiscencia mágica, manglares y playas vírgenes en un parque nacional protegido.
             </p>
           </div>
         </div>
 
         <!-- Istmo de Tehuantepec -->
-        <div class="group relative h-96 rounded-3xl overflow-hidden shadow-2xl scroll-animate">
-          <div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110" 
-               style="background-image: url('https://miaventuraoaxaca.wordpress.com/wp-content/uploads/2017/09/istmo-2.jpg?w=646&h=431')"></div>
+        <div class="group relative h-80 md:h-96 rounded-3xl overflow-hidden shadow-2xl">
+          <div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110" style="background-image: url('https://miaventuraoaxaca.wordpress.com/wp-content/uploads/2017/09/istmo-2.jpg?w=646&h=431')"></div>
           <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent"></div>
-          
-          <div class="relative h-full flex flex-col justify-end p-10 text-white translate-y-8 group-hover:translate-y-0 transition-transform duration-500">
-            <i class="fas fa-wind text-5xl mb-4 opacity-80"></i>
-            <h3 class="text-3xl font-bold mb-3">Istmo de Tehuantepec</h3>
-            <p class="text-lg leading-relaxed opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-200">
+          <div class="relative h-full flex flex-col justify-end p-6 md:p-10 text-white translate-y-8 group-hover:translate-y-0 transition-transform duration-500">
+            <i class="fas fa-wind text-4xl md:text-5xl mb-4 opacity-80"></i>
+            <h3 class="text-2xl md:text-3xl font-bold mb-3">Istmo de Tehuantepec</h3>
+            <p class="text-base md:text-lg opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-200">
               Corredor energético eólico, cultura zapoteca y conexión estratégica entre dos océanos.
             </p>
           </div>
         </div>
 
-        <!-- Oaxaca Capital -->
-        <div class="group relative h-96 rounded-3xl overflow-hidden shadow-2xl scroll-animate">
-          <div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110" 
-               style="background-image: url('https://i0.wp.com/foodandpleasure.com/wp-content/uploads/2023/01/que-hacer-en-oaxaca-1.jpg?fit=1280%2C852&ssl=1')"></div>
+        <!-- Oaxaca de Juárez -->
+        <div class="group relative h-80 md:h-96 rounded-3xl overflow-hidden shadow-2xl">
+          <div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110" style="background-image: url('https://i0.wp.com/foodandpleasure.com/wp-content/uploads/2023/01/que-hacer-en-oaxaca-1.jpg?fit=1280%2C852&ssl=1')"></div>
           <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent"></div>
-          
-          <div class="relative h-full flex flex-col justify-end p-10 text-white translate-y-8 group-hover:translate-y-0 transition-transform duration-500">
-            <i class="fas fa-monument text-5xl mb-4 opacity-80"></i>
-            <h3 class="text-3xl font-bold mb-3">Oaxaca de Juárez</h3>
-            <p class="text-lg leading-relaxed opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-200">
+          <div class="relative h-full flex flex-col justify-end p-6 md:p-10 text-white translate-y-8 group-hover:translate-y-0 transition-transform duration-500">
+            <i class="fas fa-monument text-4xl md:text-5xl mb-4 opacity-80"></i>
+            <h3 class="text-2xl md:text-3xl font-bold mb-3">Oaxaca de Juárez</h3>
+            <p class="text-base md:text-lg opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-200">
               Patrimonio UNESCO, gastronomía mundialmente famosa y epicentro cultural del estado.
             </p>
           </div>
@@ -289,46 +261,45 @@ const projects = [
     </div>
   </section>
 
-
-  <!-- Sobre AMARE (Preview) -->
-  <section class="py-24 bg-gradient-to-br from-gray-50 to-white">
+  <!-- Sobre AMARE -->
+  <section class="py-16 md:py-24 bg-gradient-to-br from-gray-50 to-white">
     <div class="max-w-7xl mx-auto px-6">
-      <div class="grid lg:grid-cols-2 gap-16 items-center">
-        <div class="animate-[fadeInUp_1s_0.2s_forwards]">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div class="text-center lg:text-left">
           <h2 class="text-4xl md:text-5xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent mb-8">Sobre AMARE Inmobiliaria</h2>
-          <p class="text-xl text-gray-700 mb-8 leading-relaxed max-w-lg">
+          <p class="text-lg md:text-xl text-gray-700 mb-8 leading-relaxed">
             Con más de 15 años de experiencia especializada en la venta de terrenos, hemos ayudado a más de 500 clientes a encontrar el espacio perfecto para construir sus proyectos.
           </p>
-          <p class="text-xl text-gray-700 mb-12 leading-relaxed max-w-lg">
+          <p class="text-lg md:text-xl text-gray-700 mb-12 leading-relaxed">
             Nuestra misión es transformar sueños en realidades a través de terrenos que no solo son una inversión, sino el inicio de algo grande.
           </p>
 
-          <div class="flex flex-wrap gap-16 mb-12">
+          <div class="grid grid-cols-3 gap-8 mb-12">
             <div class="text-center">
-              <span class="block text-5xl font-black bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">500+</span>
-              <span class="text-gray-600 text-lg font-semibold mt-2">Clientes Satisfechos</span>
+              <span class="block text-4xl md:text-5xl font-black bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">500+</span>
+              <p class="text-gray-600 text-sm md:text-base mt-2">Clientes Satisfechos</p>
             </div>
             <div class="text-center">
-              <span class="block text-5xl font-black bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">15</span>
-              <span class="text-gray-600 text-lg font-semibold mt-2">Años de Experiencia</span>
+              <span class="block text-4xl md:text-5xl font-black bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">15</span>
+              <p class="text-gray-600 text-sm md:text-base mt-2">Años de Experiencia</p>
             </div>
             <div class="text-center">
-              <span class="block text-5xl font-black bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">25</span>
-              <span class="text-gray-600 text-lg font-semibold mt-2">Zonas Atendidas</span>
+              <span class="block text-4xl md:text-5xl font-black bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">25</span>
+              <p class="text-gray-600 text-sm md:text-base mt-2">Zonas Atendidas</p>
             </div>
           </div>
 
-          <a href="/nosotros" class="btn-primary inline-flex items-center px-10 py-5 text-xl shadow-2xl hover:shadow-3xl transform hover:-translate-y-2 transition-all duration-500">
-            Conoce Nuestra Historia <i class="fas fa-arrow-right ml-4 text-lg"></i>
+          <a href="/nosotros" class="inline-flex items-center gap-4 bg-primary text-white font-bold px-8 py-4 rounded-full shadow-2xl hover:bg-secondary hover:shadow-3xl transition-all text-base md:text-xl">
+            Conoce Nuestra Historia <i class="fas fa-arrow-right"></i>
           </a>
         </div>
 
-        <div class="relative h-96 lg:h-[500px] bg-gradient-to-br from-primary via-secondary to-dark rounded-3xl flex items-center justify-center overflow-hidden animate-[fadeInUp_1s_0.5s_forwards]">
-          <div class="absolute inset-0 bg-grid-pattern opacity-10"></div>
-          <div class="text-center z-10 relative px-8">
-            <i class="fas fa-building text-7xl text-accent mb-8 animate-pulse"></i>
-            <p class="text-3xl font-bold text-white drop-shadow-2xl">Nuestra Sede Corporativa</p>
-            <p class="text-accent text-xl mt-2 opacity-90">Huatulco, Oaxaca</p>
+        <div class="relative h-80 md:h-96 lg:h-full rounded-3xl overflow-hidden shadow-2xl">
+          <img src="https://www.join-safti.com/uploads/media/750x/09/199-esprit-equipe%403x.webp?v=1-0" alt="Sede Corporativa" class="w-full h-full object-cover">
+          <div class="absolute inset-0 bg-black/40"></div>
+          <div class="absolute bottom-0 left-0 right-0 p-8 text-center text-white">
+            <p class="text-3xl md:text-4xl font-bold">Nuestra Sede Corporativa</p>
+            <p class="text-xl md:text-2xl text-accent mt-2">Huatulco, Oaxaca</p>
           </div>
         </div>
       </div>
@@ -336,186 +307,70 @@ const projects = [
   </section>
 
   <!-- CTA Final -->
-  <section class="py-24 relative overflow-hidden">
-    <div class="absolute inset-0 bg-gradient-to-r from-primary via-secondary to-accent"></div>
-    <div class="relative z-10 max-w-4xl mx-auto px-6 text-center text-white">
-      <div class="animate-[fadeInUp_1s_0.2s_forwards]">
-        <h2 class="text-4xl md:text-6xl font-black mb-8 drop-shadow-2xl">¿No encontraste lo que buscabas?</h2>
-        <p class="text-2xl mb-12 opacity-95 leading-relaxed max-w-2xl mx-auto drop-shadow-lg">
-          Contáctanos y nuestro equipo te ayudará a encontrar el terreno perfecto para tus necesidades específicas en la costa de Oaxaca.
-        </p>
-        <a href="/contacto" class="btn-primary text-2xl px-16 py-7 shadow-2xl hover:shadow-3xl transform hover:-translate-y-3 transition-all duration-500 inline-flex items-center backdrop-blur-sm bg-white/20 border-white/30">
-          Contactar Asesor <i class="fas fa-user-tie ml-5 text-xl"></i>
-        </a>
-      </div>
+  <section class="py-20 md:py-24 bg-gradient-to-r from-primary via-secondary to-accent">
+    <div class="max-w-4xl mx-auto px-6 text-center text-white">
+      <h2 class="text-4xl md:text-6xl font-black mb-8 drop-shadow-2xl">¿No encontraste lo que buscabas?</h2>
+      <p class="text-lg md:text-2xl mb-12 opacity-95 leading-relaxed">
+        Contáctanos y nuestro equipo te ayudará a encontrar el terreno perfecto para tus necesidades específicas en la costa de Oaxaca.
+      </p>
+      <a href="/contacto" class="inline-flex items-center gap-4 bg-white text-primary font-bold text-xl md:text-2xl px-12 py-6 md:py-7 rounded-full shadow-3xl hover:bg-accent hover:text-white hover:scale-110 transition-all duration-500">
+        Contactar Asesor <i class="fas fa-user-tie text-2xl md:text-3xl"></i>
+      </a>
     </div>
   </section>
 
   <Footer slot="footer" />
-
-
-
-    <script>
-		document.addEventListener('DOMContentLoaded', () => {
-			// Animación de conteo para los números del hero
-			const counters = document.querySelectorAll('.count-up');
-			const heroSection = document.querySelector('.relative.h-screen'); // Selecciona el hero
-
-			const startCounting = () => {
-			const counters = document.querySelectorAll('.count-up');
-
-			counters.forEach(counter => {
-			const target = parseInt(counter.getAttribute('data-target') || '0'); // Manejo de null
-			const duration = 2000; // 2 segundos
-			const increment = target / (duration / 16); // ~60fps
-			let current = 0;
-
-			const timer = setInterval(() => {
-				current += increment;
-				if (current >= target) {
-				counter.textContent = target.toString(); // Conversión explícita a string
-				clearInterval(timer);
-				} else {
-				counter.textContent = Math.floor(current).toString(); // Conversión explícita a string
-				}
-			}, 16);
-			});
-			};
-
-			// Solo activar cuando el hero esté visible
-			const observer = new IntersectionObserver((entries) => {
-			entries.forEach(entry => {
-				if (entry.isIntersecting && !document.querySelector('.counted')) {
-				startCounting();
-				observer.unobserve(entry.target);
-				}
-			});
-			}, { threshold: 0.5 });
-
-			if (heroSection) {
-			observer.observe(heroSection);
-			}
-
-			// === Tu código de filtros existente (sin cambios) ===
-			const filterBtns = document.querySelectorAll('[data-filter]');
-			const cards = document.querySelectorAll('[data-category]');
-
-			filterBtns.forEach(btn => {
-			btn.addEventListener('click', () => {
-				const filter = btn.dataset.filter || 'all';
-
-				filterBtns.forEach(b => {
-				b.classList.remove('bg-primary', 'text-white', 'shadow-2xl', '-translate-y-1', 'scale-105');
-				b.classList.add('bg-gray-200', 'text-gray-800', 'shadow-md');
-				});
-
-				btn.classList.add('bg-primary', 'text-white', 'shadow-2xl', '-translate-y-1', 'scale-105');
-				btn.classList.remove('bg-gray-200', 'text-gray-800', 'shadow-md');
-
-				cards.forEach(card => {
-				const matches = filter === 'all' || card.dataset.category === filter;
-				if (matches) {
-					card.classList.remove('hidden');
-				} else {
-					card.classList.add('hidden');
-				}
-				});
-			});
-			});
-		});
-	</script>
 </Layout>
 
-<style is:global>
-  @keyframes fadeInUp {
-    from { 
-      opacity: 0; 
-      transform: translateY(60px); 
-    }
-    to { 
-      opacity: 1; 
-      transform: translateY(0); 
-    }
-  }
-
-  .line-clamp-3 {
-    display: -webkit-box;
-    -webkit-line-clamp: 3;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-  }
-
-  .bg-grid-pattern {
-    background-image: 
-      linear-gradient(rgba(255,255,255,.1) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(255,255,255,.1) 1px, transparent 1px);
-    background-size: 40px 40px;
-  }
-
-  /* Filtros mejorados */
-  .filter-btn.active {
-    @apply bg-primary text-white shadow-2xl -translate-y-1 scale-105;
-  }
-
-  /* Animaciones de scroll */
-  .animate-[fadeInUp_0.8s_ease-out_0.1s_forwards] {
-    animation: fadeInUp 0.8s ease-out 0.1s forwards;
-  }
-</style>
-
+<!-- Scripts -->
 <script>
   document.addEventListener('DOMContentLoaded', () => {
+    // Conteo
+    const counters = document.querySelectorAll('.count-up');
+    const heroSection = document.querySelector('.hero-section');
+
+    const startCounting = () => {
+      counters.forEach(counter => {
+        const target = parseInt((counter as HTMLElement).dataset.target || '0');
+        let current = 0;
+        const increment = target / 100;
+        const timer = setInterval(() => {
+          current += increment;
+          if (current >= target) {
+            counter.textContent = target + (counter.nextElementSibling?.textContent || '');
+            clearInterval(timer);
+          } else {
+            counter.textContent = Math.floor(current).toString();
+          }
+        }, 20);
+      });
+    };
+
+    const heroObserver = new IntersectionObserver(entries => {
+      if (entries[0].isIntersecting) {
+        startCounting();
+        heroObserver.unobserve(entries[0].target);
+      }
+    }, { threshold: 0.5 });
+
+    if (heroSection) heroObserver.observe(heroSection);
+
+    // Filtros
     const filterBtns = document.querySelectorAll('[data-filter]');
     const cards = document.querySelectorAll('[data-category]');
-    const projectsGrid = document.getElementById('projects-grid');
 
-    // Intersection Observer para animaciones al hacer scroll
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('opacity-100', 'translate-y-0');
-          observer.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.1 });
-
-    cards.forEach(card => observer.observe(card));
-
-    // Filtros SIN style.animationDelay (usando clases Tailwind)
     filterBtns.forEach(btn => {
       btn.addEventListener('click', () => {
-        const filter = btn.dataset.filter;
-
-        // Resetear botones
+        const filter = (btn as HTMLElement).dataset.filter || 'all';
         filterBtns.forEach(b => {
-          b.classList.remove('bg-primary', 'text-white', 'shadow-2xl', '-translate-y-1', 'scale-105', 'shadow-lg');
-          b.classList.add('bg-gray-200', 'text-gray-800', 'shadow-md');
+          b.classList.toggle('bg-primary text-white shadow-xl -translate-y-1', b === btn);
+          b.classList.toggle('bg-gray-200 text-gray-800 shadow-md', b !== btn);
         });
 
-        // Activar botón clicked
-        btn.classList.add('bg-primary', 'text-white', 'shadow-2xl', '-translate-y-1', 'scale-105');
-        btn.classList.remove('bg-gray-200', 'text-gray-800', 'shadow-md');
-
-        // Filtrar cards
         cards.forEach(card => {
-          if (filter === 'all' || card.dataset.category === filter) {
-            card.classList.remove('hidden', 'opacity-0', 'scale-95');
-            card.classList.add('block', 'opacity-100', 'scale-100');
-            observer.observe(card); // Re-observar para animación
-          } else {
-            card.classList.add('hidden', 'opacity-0', 'scale-95');
-            card.classList.remove('block', 'opacity-100', 'scale-100');
-          }
+          const matches = filter === 'all' || (card as HTMLElement).dataset.category === filter;
+          card.classList.toggle('hidden', !matches);
         });
-      });
-    });
-
-    // Smooth scroll para anclas
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', (e) => {
-        e.preventDefault();
-        const target = document.querySelector(anchor.getAttribute('href'));
-        target?.scrollIntoView({ behavior: 'smooth', block: 'start' });
       });
     });
   });

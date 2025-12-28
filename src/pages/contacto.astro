@@ -10,7 +10,7 @@ import Footer from '../components/Footer.astro';
 
   <!-- Hero Section -->
   <section class="relative h-screen min-h-[700px] bg-fixed bg-center bg-cover -mt-20" style="background-image: url('https://img.freepik.com/foto-gratis/paraiso-playa-tropical-palmeras-agua-turquesa_23-2151975534.jpg?semt=ais_hybrid&w=740&q=80')">
-    <div class="absolute inset-0 bg-gradient-to-b from-black/70 via-primary/90 to-primary/95"></div>
+    <div class="absolute inset-0 bg-gradient-to-b from-black/20 via-primary/70 to-primary/85"></div>
     <div class="relative z-10 flex items-center justify-center h-full text-center text-white px-6">
       <div class="max-w-4xl">
         <h1 class="text-5xl md:text-6xl lg:text-7xl font-bold mb-8 scroll-animate">CONTÁCTANOS</h1>
@@ -96,7 +96,7 @@ import Footer from '../components/Footer.astro';
         Conoce las mejores propiedades, promociones exclusivas y mantente al día con las últimas novedades del mercado inmobiliario
       </p>
 
-      <div class="flex flex-wrap justify-center gap-10 md:gap-16">
+      <div class="flex flex-wrap justify-center gap-10 md:gap-10">
         <!-- Facebook -->
         <a href="#" target="_blank" class="scroll-animate">
           <div class="bg-gradient-to-b from-blue-700 to-blue-900 text-white w-48 h-80 rounded-3xl flex flex-col items-center justify-end pb-10 shadow-2xl hover:shadow-3xl hover:-translate-y-4 transition-all duration-500">
@@ -182,31 +182,36 @@ import Footer from '../components/Footer.astro';
     </div>
   </section>
 
-  <!-- Ubicación en Mapa -->
+    <!-- Ubicación en Mapa - CON IFRAME REAL DE GOOGLE MAPS -->
   <section class="py-20 bg-white">
     <div class="max-w-7xl mx-auto px-6">
       <h2 class="text-4xl font-bold text-primary text-center mb-16 scroll-animate">Visita Nuestras Oficinas</h2>
 
       <div class="grid lg:grid-cols-2 gap-12 items-center">
-        <div class="bg-gradient-to-br from-primary to-secondary text-white rounded-3xl p-10 shadow-2xl scroll-animate">
+        <!-- Información de la oficina -->
+        <div class="bg-gradient-to-br from-primary to-secondary text-white rounded-3xl p-10 shadow-2xl scroll-animate order-2 lg:order-1">
           <h3 class="text-3xl font-bold mb-8">Oficina Central AMARE</h3>
           <div class="space-y-6 text-lg">
-            <p class="flex items-center gap-4"><i class="fas fa-map-marker-alt text-accent"></i> Av. Principal 123, Col. Centro, Ciudad de México, CP 12345</p>
-            <p class="flex items-center gap-4"><i class="fas fa-clock text-accent"></i> Lunes a Viernes 9:00 AM - 7:00 PM</p>
-            <p class="flex items-center gap-4"><i class="fas fa-phone-alt text-accent"></i> +52 555 123 4567</p>
-            <p class="flex items-center gap-4"><i class="fas fa-car text-accent"></i> Estacionamiento gratuito para clientes</p>
-            <p class="flex items-center gap-4"><i class="fas fa-wheelchair text-accent"></i> Acceso para personas con discapacidad</p>
+            <p class="flex items-center gap-4"><i class="fas fa-map-marker-alt text-accent text-xl"></i> Av. Principal 123, Col. Centro, Ciudad de México, CP 12345</p>
+            <p class="flex items-center gap-4"><i class="fas fa-clock text-accent text-xl"></i> Lunes a Viernes 9:00 AM - 7:00 PM</p>
+            <p class="flex items-center gap-4"><i class="fas fa-phone-alt text-accent text-xl"></i> +52 555 123 4567</p>
+            <p class="flex items-center gap-4"><i class="fas fa-car text-accent text-xl"></i> Estacionamiento gratuito para clientes</p>
+            <p class="flex items-center gap-4"><i class="fas fa-wheelchair text-accent text-xl"></i> Acceso para personas con discapacidad</p>
           </div>
         </div>
 
-        <div class="bg-gray-200 rounded-3xl h-96 flex items-center justify-center scroll-animate">
-          <div class="text-center text-gray-600">
-            <i class="fas fa-map-marked-alt text-8xl mb-6"></i>
-            <p class="text-2xl font-bold mb-4">Mapa Interactivo</p>
-            <button class="bg-primary text-white px-8 py-4 rounded-full font-bold hover:bg-secondary transition">
-              Abrir en Google Maps
-            </button>
-          </div>
+        <!-- Mapa con iframe responsivo -->
+        <div class="relative w-full h-96 lg:h-full rounded-3xl overflow-hidden shadow-2xl scroll-animate order-1 lg:order-2">
+          <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d561.948959451828!2d-96.51398983202719!3d15.732570097580677!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85b8d7e73092d829%3A0x926df48d337be226!2sAMAR%C3%89%20INMOBILIARIA!5e0!3m2!1ses-419!2smx!4v1766865235622!5m2!1ses-419!2smx" 
+            width="100%" 
+            height="100%" 
+            style="border:0;" 
+            allowfullscreen="" 
+            loading="lazy" 
+            referrerpolicy="no-referrer-when-downgrade"
+            class="absolute inset-0">
+          </iframe>
         </div>
       </div>
     </div>

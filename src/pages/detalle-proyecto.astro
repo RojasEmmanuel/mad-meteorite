@@ -1,0 +1,224 @@
+---
+// src/pages/detalle-proyecto.astro (VERSIÓN MÁS RESPONSIVE Y OPTIMIZADA)
+import Layout from '../components/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+
+const project = {
+  title: 'Costa Diamante',
+  location: 'Zona Costera, Huatulco, Oaxaca',
+  description: 'Exclusivos terrenos con vista al mar. Oportunidad única para desarrollo turístico o segunda residencia. Este proyecto ofrece lotes premium en una ubicación privilegiada, con acceso privado a la playa, seguridad 24/7 y cercanía a los principales atractivos turísticos de la costa oaxaqueña.',
+  price: 'Desde $3,800,000 MXN',
+  size: '3,000 - 8,000 m²',
+  availability: 'Preventa con 20% desc',
+  amenidades: [
+    'Vista al mar panorámica',
+    'Acceso privado a playa',
+    'Seguridad 24/7',
+    'Áreas verdes y jardines',
+    'Club house exclusivo',
+    'Piscina infinita',
+    'Gimnasio y spa',
+    'Canchas deportivas'
+  ],
+  servicios: [
+    'Agua potable y drenaje',
+    'Electricidad subterránea',
+    'Internet de alta velocidad',
+    'Vialidades pavimentadas',
+    'Iluminación LED',
+    'Recolección de basura',
+    'Mantenimiento de áreas comunes',
+    'Asesoría legal incluida'
+  ],
+  gallery: [
+    'https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80',
+    'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80',
+    'https://images.unsplash.com/photo-1582268623095-1a67c8a50f3f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80',
+    'https://images.unsplash.com/photo-1519046904674-9d5b1e9e7a4a?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80',
+    'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80',
+    'https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80'
+  ],
+  plano: 'https://images.unsplash.com/photo-1580983561379-164ae0192fce?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80'
+};
+---
+
+<Layout title={`AMARE - ${project.title}`}>
+  <Navbar slot="navbar" />
+
+  <!-- Hero Responsive (altura ajustada + texto legible en móvil) -->
+  <section class="relative h-[70vh] md:h-[80vh] lg:h-screen min-h-[600px] bg-fixed bg-center bg-cover -mt-20 overflow-hidden">
+    <div class="absolute inset-0 bg-cover bg-center" style={`background-image: url(${project.gallery[0]})`}>
+      <div class="absolute inset-0 bg-gradient-to-b from-transparent via-primary/40 to-primary/90"></div>
+    </div>
+    <div class="relative z-10 flex items-center justify-center h-full text-center text-white px-4 md:px-6">
+      <div class="max-w-4xl">
+        <h1 class="text-4xl md:text-6xl lg:text-8xl font-black mb-4 md:mb-6 drop-shadow-3xl animate-fade-in">{project.title}</h1>
+        <p class="text-lg md:text-3xl opacity-90 drop-shadow-2xl animate-fade-in delay-300">{project.location}</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Descripción General Responsive -->
+  <section class="py-12 md:py-24 bg-gradient-to-b from-gray-100 to-white">
+    <div class="max-w-6xl mx-auto px-4 md:px-6 text-center">
+      <h2 class="text-3xl md:text-5xl font-bold text-primary mb-6 md:mb-10 animate-slide-up">Descripción General</h2>
+      <p class="text-base md:text-xl text-gray-700 leading-relaxed max-w-4xl mx-auto mb-10 md:mb-16 animate-slide-up delay-200">{project.description}</p>
+      
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-10">
+        <div class="bg-white/90 backdrop-blur-md p-6 md:p-10 rounded-3xl shadow-2xl hover:shadow-3xl hover:-translate-y-4 transition-all duration-500 animate-slide-up delay-300">
+          <i class="fas fa-tags text-primary text-4xl md:text-5xl mb-4 md:mb-6"></i>
+          <h3 class="text-xl md:text-3xl font-bold text-primary mb-4">Precio</h3>
+          <p class="text-lg md:text-2xl text-gray-800 font-bold">{project.price}</p>
+        </div>
+        <div class="bg-white/90 backdrop-blur-md p-6 md:p-10 rounded-3xl shadow-2xl hover:shadow-3xl hover:-translate-y-4 transition-all duration-500 animate-slide-up delay-400">
+          <i class="fas fa-ruler-combined text-primary text-4xl md:text-5xl mb-4 md:mb-6"></i>
+          <h3 class="text-xl md:text-3xl font-bold text-primary mb-4">Tamaño</h3>
+          <p class="text-lg md:text-2xl text-gray-800 font-bold">{project.size}</p>
+        </div>
+        <div class="bg-white/90 backdrop-blur-md p-6 md:p-10 rounded-3xl shadow-2xl hover:shadow-3xl hover:-translate-y-4 transition-all duration-500 animate-slide-up delay-500">
+          <i class="fas fa-calendar-alt text-primary text-4xl md:text-5xl mb-4 md:mb-6"></i>
+          <h3 class="text-xl md:text-3xl font-bold text-primary mb-4">Disponibilidad</h3>
+          <p class="text-lg md:text-2xl text-gray-800 font-bold">{project.availability}</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Amenidades Responsive -->
+  <section class="py-12 md:py-24 bg-gradient-to-b from-white to-gray-100">
+    <div class="max-w-7xl mx-auto px-4 md:px-6">
+      <h2 class="text-3xl md:text-5xl font-bold text-primary mb-8 md:mb-16 text-center animate-slide-up">Amenidades de Lujo</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
+        {project.amenidades.map((amenity, i) => (
+          <div class="group relative bg-white/80 backdrop-blur-lg rounded-3xl p-6 md:p-8 shadow-2xl hover:shadow-3xl hover:-translate-y-4 transition-all duration-700 animate-slide-up" style={`animation-delay: ${i * 100}ms`}>
+            <div class="absolute inset-0 bg-cover bg-center opacity-10 rounded-3xl -z-10 transition-transform duration-1000 group-hover:scale-110" style="background-image: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80')"></div>
+            <i class="fas fa-spa text-primary text-5xl md:text-6xl mb-4 md:mb-6 group-hover:scale-125 transition-transform duration-500"></i>
+            <p class="text-base md:text-xl text-gray-800 font-semibold text-center">{amenity}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Servicios Responsive -->
+  <section class="py-12 md:py-24 bg-gradient-to-b from-gray-100 to-white">
+    <div class="max-w-7xl mx-auto px-4 md:px-6">
+      <h2 class="text-3xl md:text-5xl font-bold text-primary mb-8 md:mb-12 text-center animate-slide-up">Servicios Incluidos</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
+        {project.servicios.map((service, i) => (
+          <div class="group relative bg-white/80 backdrop-blur-lg rounded-3xl p-6 md:p-8 shadow-2xl hover:shadow-3xl hover:-translate-y-4 transition-all duration-700 animate-slide-up" style={`animation-delay: ${i * 100}ms`}>
+            <div class="absolute inset-0 bg-cover bg-center opacity-10 rounded-3xl -z-10 transition-transform duration-1000 group-hover:scale-110" style="background-image: url('https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80')"></div>
+            <i class="fas fa-cogs text-primary text-5xl md:text-6xl mb-4 md:mb-6 group-hover:rotate-45 transition-transform duration-500"></i>
+            <p class="text-base md:text-xl text-gray-800 font-semibold text-center">{service}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Galería Responsive (grid simple en móvil) -->
+  <section class="py-12 md:py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-4 md:px-6">
+      <h2 class="text-3xl md:text-5xl font-bold text-primary mb-8 md:mb-12 text-center animate-slide-up">Galería Exclusiva</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6" id="gallery">
+        {project.gallery.map((img, index) => (
+          <div class="relative rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl cursor-pointer transition-all duration-500 hover:scale-105 animate-slide-up" style={`animation-delay: ${index * 100}ms`}>
+            <img src={img} alt={`Galería ${index + 1}`} class="w-full h-64 md:h-80 object-cover transition-transform duration-700 hover:scale-110">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-500 flex items-end p-4 md:p-6">
+              <p class="text-white text-base md:text-lg font-bold">Ver en detalle</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Lightbox -->
+  <div id="lightbox" class="fixed inset-0 bg-black/95 flex items-center justify-center z-50 hidden">
+    <button id="close-lightbox" class="absolute top-4 right-4 md:top-8 md:right-8 text-white text-4xl md:text-5xl hover:text-gray-300">&times;</button>
+    <img id="lightbox-img" class="max-w-[95%] max-h-[90vh] rounded-3xl shadow-3xl" src="">
+  </div>
+
+  <!-- Plano Responsive -->
+  <section class="py-12 md:py-24 bg-gray-100">
+    <div class="max-w-6xl mx-auto px-4 md:px-6">
+      <h2 class="text-3xl md:text-5xl font-bold text-primary mb-8 md:mb-12 text-center animate-slide-up">Plano del Desarrollo</h2>
+      <div class="bg-white rounded-3xl shadow-2xl overflow-hidden animate-slide-up delay-200">
+        <img src={project.plano} alt="Plano" class="w-full h-auto">
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Final Responsive -->
+  <section class="py-20 md:py-32 bg-gradient-to-r from-primary via-secondary to-accent relative overflow-hidden">
+    <div class="relative z-10 max-w-5xl mx-auto px-4 md:px-6 text-center text-white">
+      <h2 class="text-4xl md:text-6xl lg:text-7xl font-black mb-6 md:mb-10 animate-slide-up">¡Haz realidad tu sueño en {project.title}!</h2>
+      <p class="text-base md:text-2xl mb-10 md:mb-16 leading-relaxed max-w-3xl mx-auto animate-slide-up delay-200">
+        Terrenos exclusivos con vista al mar y todas las amenidades de lujo. Oportunidad limitada en preventa.
+      </p>
+      <a href="/contacto" class="inline-flex items-center gap-4 bg-white text-primary font-black text-xl md:text-3xl px-10 md:px-16 py-5 md:py-8 rounded-full shadow-3xl hover:shadow-accent/50 hover:scale-105 hover:bg-accent hover:text-white transition-all duration-500 animate-pulse-btn">
+        Reserva tu Lote Hoy <i class="fas fa-arrow-right text-2xl md:text-4xl"></i>
+      </a>
+    </div>
+  </section>
+
+  <Footer slot="footer" />
+</Layout>
+
+<!-- Animaciones y Lightbox -->
+<style is:global>
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  @keyframes slideUp {
+    from { opacity: 0; transform: translateY(60px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .animate-fade-in { animation: fadeIn 1.5s ease-out; }
+  .animate-slide-up { opacity: 0; animation: slideUp 0.8s ease-out forwards; }
+  .delay-200 { animation-delay: 0.2s; }
+  .delay-300 { animation-delay: 0.3s; }
+  .delay-400 { animation-delay: 0.4s; }
+  .delay-500 { animation-delay: 0.5s; }
+
+  @keyframes pulseBtn {
+    0%, 100% { box-shadow: 0 0 20px rgba(255,255,255,0.5); }
+    50% { box-shadow: 0 0 40px rgba(255,255,255,0.8); }
+  }
+  .animate-pulse-btn { animation: pulseBtn 2s infinite; }
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const items = document.querySelectorAll('#gallery > div');
+    const lightbox = document.getElementById('lightbox');
+    const img = document.getElementById('lightbox-img');
+    const close = document.getElementById('close-lightbox');
+
+    items.forEach(item => {
+      item.addEventListener('click', () => {
+        const imageElement = item.querySelector('img');
+        if (imageElement instanceof HTMLImageElement) {
+          if (img instanceof HTMLImageElement) {
+            img.src = imageElement.src;
+          }
+        }
+        if (lightbox) {
+          lightbox.classList.remove('hidden');
+          lightbox.classList.add('flex');
+        }
+      });
+    });
+
+    if (lightbox && close) {
+      close.addEventListener('click', () => lightbox.classList.add('hidden'));
+    }
+    if (lightbox) {
+      lightbox.addEventListener('click', (e) => {
+        if (e.target === lightbox) lightbox.classList.add('hidden');
+      });
+    }
+  });
+</script>
